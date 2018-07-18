@@ -1,0 +1,17 @@
+%opis {
+font-family: sans-serif;
+font-size: 20px;
+margin: 20px;
+padding: 20px;
+width: 200px;
+}
+
+.opis1 {
+ @extend %message;
+ background-color:green;
+}
+
+.opis2 {
+ @extend %message;
+ background-color:green;
+}
