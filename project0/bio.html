@@ -1,44 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl-PL">
 <head>
+   <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
           integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <title>Bio</title>
+    <title>Wyprawy</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item">
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
 
-                <a class="nav-link" href="index.html">
-                    <button type="button" class="btn btn-light">Start</button>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="bio.html">
-                    <button type="button" class="btn btn-light">Bio</button>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="foto.html">
-                    <button type="button" class="btn btn-light">Foto</button>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="list.html">
-                    <button type="button" class="btn btn-light">List</button>
-                </a>
-            </li>
-        </ul>
+                    <a class="nav-link" href="index.html">
+                        <button type="button" class="btn btn-light">Start</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="bio.html">
+                        <button type="button" class="btn btn-light">Wyprawy</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="foto.html">
+                        <button type="button" class="btn btn-light">Foto</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="list.html">
+                        <button type="button" class="btn btn-light">Lista</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1> Wycieczki :</h1>
+
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Wyprawa</th>
+      <th scope="col">Data</th>
+      <th scope="col">Długość</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Spacerek</td>
+      <td>12.06.2011</td>
+      <td>12 km</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Bieg</td>
+      <td>13.06.2011</td>
+      <td>20 km</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Spacerek</td>
+      <td>14.06.2011</td>
+      <td>5 km</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
     </div>
-</nav>
-
-<div>
-
-
 </div>
-
 
 </body>
 </html>
