@@ -1,0 +1,16 @@
+nowe formatowanie w p3.6
+input()
+print(f"hello {name}!")
+print("{} squared is {}".format(i, squared(i)))
+
+python -m flask run
+
+jinja2 jezyk templatek np {{ wsadzamy tu zmienna  }} {% tu wsadzamy warunek %}
+{% for x in names %}
+    {{ x }}
+{% endfor %}
+
+i ... linkowanie w templatce do FUNKCJI
+<a href="{{ url_for('start') }}">NEWYEAR </a>
+
+Template Inheritance...base.html
