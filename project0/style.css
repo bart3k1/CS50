@@ -19,12 +19,27 @@
     padding: 20px;
     grid-column-gap: 20px;
     grid-row-gap: 10px;
-    grid-template-columns: 200px auto auto;
+    grid-template-columns: auto auto auto;
 }
 
 .grid-item {
     background-color: white;
     font-size: 20px;
     padding: 20px;
+
+}
+
+.grid-item-a {
+    background-color: mediumvioletred;
+    font-size: 20px;
+    padding: 20px;
     text-align: center;
+}
+
+.separator {
+    background-color: gray;
+    font-size: 55px;
+    padding: 55px;
+    text-align: center;
+    width: 100%;
 }
