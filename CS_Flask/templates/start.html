@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block heading %}
+    Simple form
+{% endblock %}
+
+{% block body %}
+    <form action="{{ url_for('hello') }}" method="post">
+    <input type="text" name="name" placeholder="Wpisz imię">
+    <button>Submit</button>
+    </form>
+{% endblock %}

@@ -5,10 +5,18 @@
     <title>BLOKI!</title>
 </head>
 <body>
-    <h1>{% block heading %}{% endblock %}</h1>
+    <h3>Coś przed blokiem heading</h3>
 
-    {% block body %}
-    {% endblock %}
+    <div>
+        {% block heading %}
+        {% endblock %}
+    </div>
 
+    <h3> Coś przed blokiem body </h3>
+
+    <div>
+        {% block body %}
+        {% endblock %}
+    </div>
 </body>
 </html>

@@ -42,3 +42,8 @@ def newyear_checker():
     headline = "Czy mamy Nowy Rok?"
     return render_template("index2.html", a=a, headline=headline)
     # return render_template("index3.html", newyear=newyear, headline=headline) //mozna ifem w templatce
+
+@app.route("/xtend")
+def xtend():
+    headline = "traytatatta"
+    return render_template("xtend.html", headline=headline)
