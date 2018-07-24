@@ -1,0 +1,85 @@
+sudo -u postgres createdb mydb
+psql mydb
+
+
+mydb=# CREATE TABLE flights (
+id SERIAL PRIMARY KEY,
+origin VARCHAR NOT NULL,
+destination VARCHAR NOT NULL,
+duration INTEGER NOT NULL);
+
+\d - show tables
+\dt
+\l - list databases
+\connect database_name
+
+INSERT INTO flights
+    (origin, destination, duration)
+    VALUES
+    ('Poznań', 'Timbuktu', '1415');
+
+INSERT INTO passengers
+    (name, flight_id)
+    VALUES
+    ('Adam', '1');
+
+SELECT * FROM flights;
+select * from flights where id=1;
+select * from flights where duration>500;
+select origin from flights;
+select * from flights where destination = 'Timbuktu' and duration < 1300;
+
+SELECT avg(duration) from flights;
+SELECT COUNT(*) FROM flights;
+SELECT MIN(duration) FROM flights;
+SELECT * FROM flights WHERE origin IN ('Warsaw', 'London');
+SELECT * FROM flights WHERE origin LIKE ('%a%'); // any with a inside
+
+UPDATE flights SET duration = 430
+    WHERE origin = 'Warsaw' AND destination = 'London';
+
+DELETE FROM flights WHERE destination = 'Warsaw';
+
+SELECT * FROM flights ORDER BY duration ASC LIMIT 2; // DESC - descending order
+
+SELECT origin, COUNT(*) FROM flights GROUP BY origin;
+SELECT origin, COUNT(*) FROM flights GROUP BY origin HAVING COUNT(*)>1;
+
+ONLINE ADMIN
+adminer.cs50.net
+
+//foreign key
+CREATE TABLE passengers (
+id SERIAL PRIMARY KEY,
+name VARCHAR NOT NULL,
+flight_id INTEGER REFERENCES flights
+);
+
+//JOINY
+
+
+SELECT origin, destination, name FROM flights JOIN passengers ON passengers.flight_id=flights.id;
+SELECT origin, destination, name FROM flights JOIN passengers ON passengers.flight_id=flights.id WHERE name='Ewa';
+
+SELECT origin, destination, name FROM flights LEFT JOIN passengers ON passengers.flight_id=flights.id;
+
+
+// NESTING
+
+SELECT flight_id FROM passengers GROUP BY flight_id HAVING COUNT(*) >1;
+wybranie flightow ktore maja wiecej niz jeden passanger
+
+Select * FROM flights WHERE id IN(
+SELECT flight_id FROM passengers GROUP BY flight_id HAVING COUNT(*) >1; )
+osadzony search w searchu
+
+
+//INDEXY
+
+spowalnia dodawanie i updejt bo jeszcze trzeba indexy updejtowac i zajmuje miejsce
+CREATE INDEX ...
+
+// SQL INjection
+
+
+
