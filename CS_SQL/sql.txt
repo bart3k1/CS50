@@ -81,5 +81,18 @@ CREATE INDEX ...
 
 // SQL INjection
 
+user: jakis
+password: 1' OR '1' = '1
+SELECT * FROM users WHERE user=jakis AND PASSWORD=1 OR 1=1
+
+//Race Condition
+
+2 zapytania naraz zanim updejt przejdzie ( konto i 100$)
+--> SQL TRANSACTIONS / dwa etapy
+-begin
+-commit
+
+
+
 
 
