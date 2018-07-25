@@ -1,6 +1,20 @@
+https://suhas.org/sqlalchemy-tutorial/
+
 sudo -u postgres createdb mydb
 psql mydb
+mydb=# CREATE USER xxx WITH PASSWORD 'xxxxxxxx';
+mydb=# GRANT ALL PRIVILEGES ON DATABASE tennis TO federer;
+mydb=#  GRANT ALL PRIVILEGES ON TABLE flights TO xxx;
+GRANT USAGE, SELECT ON SEQUENCE flights_id_seq TO xxx;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO www; // public jest ogolny dla wszystkich baz i tabel
 
+
+Create a file (if one doesn't exist already) called ~/.zshenv
+In this file, add the line:
+export DB_CONNECTION_STRING="mysql://username:password@localhost/dbname"
+export PSQL_MYDB_URL='postgresql://xxx:xxxxxxxx@localhost:5432/mydb'
+# engine = create_engine(os.getenv('DB_CONNECTION_STRING'))
+# to jesli sobie ustawie zmienna w linuchu
 
 mydb=# CREATE TABLE flights (
 id SERIAL PRIMARY KEY,

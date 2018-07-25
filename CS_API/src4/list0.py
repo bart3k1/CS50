@@ -3,15 +3,11 @@ import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
-# export PSQL_MYDB_URL='postgresql://xxx:xxxxxxxx@localhost:5432/mydb'
-# engine = create_engine('postgresql://xxx:xxxxxxxx@localhost:5432/mydb')
-engine = create_engine(os.getenv('PSQL_MYDB_URL'))
-# to jesli sobie ustawie zmienna w linuchu
+engine = create_engine(os.getenv("DATABASE_URL"))
 db = scoped_session(sessionmaker(bind=engine))
 
 def main():
     flights = db.execute("SELECT origin, destination, duration FROM flights").fetchall()
-    print(flights[0])
     for flight in flights:
         print(f"{flight.origin} to {flight.destination}, {flight.duration} minutes.")
 
