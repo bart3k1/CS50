@@ -19,5 +19,3 @@ def hello():
         if not name:
             name = "Nieznajomy"
         return render_template("hello.html", name=name)
-
-
