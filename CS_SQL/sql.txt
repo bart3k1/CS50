@@ -1,12 +1,16 @@
 https://suhas.org/sqlalchemy-tutorial/
 
+sudo -u postgres psql
+pozniej tworze usera i nadaje mu wszystkie privilidge... chujwieczcemu
+
+
 sudo -u postgres createdb mydb
 psql mydb
 mydb=# CREATE USER xxx WITH PASSWORD 'xxxxxxxx';
 mydb=# GRANT ALL PRIVILEGES ON DATABASE tennis TO federer;
-mydb=#  GRANT ALL PRIVILEGES ON TABLE flights TO xxx;
-GRANT USAGE, SELECT ON SEQUENCE flights_id_seq TO xxx;
-GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO www; // public jest ogolny dla wszystkich baz i tabel
+mydb=#  GRANT ALL PRIVILEGES ON TABLE flights TO bart;
+GRANT USAGE, SELECT ON SEQUENCE flights_id_seq TO bart;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO bart; // public jest ogolny dla wszystkich baz i tabel
 
 
 Create a file (if one doesn't exist already) called ~/.zshenv
@@ -42,6 +46,11 @@ select * from flights where id=1;
 select * from flights where duration>500;
 select origin from flights;
 select * from flights where destination = 'Timbuktu' and duration < 1300;
+
+https://stackoverflow.com/questions/22483555/give-all-the-permissions-to-a-user-on-a-db
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA MY_SCHEMA TO MY_GROUP;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA MY_SCHEMA TO MY_GROUP;
+
 
 SELECT avg(duration) from flights;
 SELECT COUNT(*) FROM flights;

@@ -6,11 +6,11 @@ app = Flask(__name__)
 
 @app.route("/")
 def start():
-    return render_template("start.html")
+    return render_template("start_m.html")
 
 
-@app.route("/hello", methods=["GET", "POST"])
-def hello():
+@app.route("/welcome", methods=["GET", "POST"])
+def welcome():
     #     if jeśli udostępnimy method GET albo nie wpiszemy nic w form
     if request.method == "GET":
         return "Please submit form"
